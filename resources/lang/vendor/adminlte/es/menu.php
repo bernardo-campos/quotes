@@ -16,4 +16,9 @@ return [
     'important'                     => 'Importante',
     'warning'                       => 'Advertencia',
     'information'                   => 'Información',
+
+    // custom:
+    'models'                        => 'MODELOS',
+    'authors'                       => 'Autores',
+    'quotes'                        => 'Frases',
 ];
