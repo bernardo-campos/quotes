@@ -39,6 +39,28 @@
 @push('js')
 <script>
 
+    @php
+        $config = array_merge($config,
+            [
+                'responsive' => [
+                    'details' => [
+                        'type' => "column"
+                    ]
+                ],
+                'columnDefs' => [
+                    [
+                        'className' => "dtr-control",
+                        'targets' => 0,
+                        "orderable" => false
+                    ]
+                ],
+                'language' => [
+                    'url' => "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
+                ]
+            ]
+        );
+    @endphp
+
     $(() => {
         $('#{{ $id }}').DataTable( @json($config) );
     })
