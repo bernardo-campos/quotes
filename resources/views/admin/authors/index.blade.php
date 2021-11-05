@@ -12,6 +12,7 @@
 @php
     $heads = [
         '',
+        'id',
         'name',
         'description',
         'popularity',
@@ -29,6 +30,7 @@
                     @foreach($authors as $author)
                         <tr>
                             <td></td>
+                            <td>{{ $author->id }}</td>
                             <td>{{ $author->name }}</td>
                             <td>{{ $author->description }}</td>
                             <td>{{ $author->popularity }}</td>

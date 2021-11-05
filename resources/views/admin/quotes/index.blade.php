@@ -29,7 +29,7 @@
                         <tr>
                             <td></td>
                             <td>{{ $quote->id }}</td>
-                            <td>{{ $quote->name }}</td>
+                            <td>{{ $quote->quote }}</td>
                             <td>{{ $quote->author->name }}</td>
                         </tr>
                     @endforeach
