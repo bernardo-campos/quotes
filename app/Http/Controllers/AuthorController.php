@@ -10,7 +10,7 @@ class AuthorController extends Controller
     public function index()
     {
         return view('admin.authors.index', [
-            'authors' => Author::withCount('quotes')->get()
+            'authors' => Author::withCount('quotes')->paginate()
         ]);
     }
 }

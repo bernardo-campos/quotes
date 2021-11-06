@@ -10,7 +10,7 @@ class QuoteController extends Controller
     public function index()
     {
         return view('admin.quotes.index', [
-            'quotes' => Quote::with('author')->get()
+            'quotes' => Quote::with('author')->paginate()
         ]);
     }
 }

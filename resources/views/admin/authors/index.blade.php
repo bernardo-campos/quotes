@@ -9,35 +9,37 @@
     </a>
 @stop
 
-@php
-    $heads = [
-        '',
-        'id',
-        'name',
-        'description',
-        'popularity',
-        'quotes',
-    ];
-@endphp
-
 @section('content')
 
     <div class="card">
         <div class="card-body">
             <div class="row">
 
-                <x-adminlte-datatable id="table1" :heads="$heads">
-                    @foreach($authors as $author)
+                <table class="table table-sm">
+                    <thead>
                         <tr>
-                            <td></td>
-                            <td>{{ $author->id }}</td>
-                            <td>{{ $author->name }}</td>
-                            <td>{{ $author->description }}</td>
-                            <td>{{ $author->popularity }}</td>
-                            <td>{{ $author->quotes_count }}</td>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>description</th>
+                            <th>popularity</th>
+                            <th>quotes</th>
                         </tr>
-                    @endforeach
-                </x-adminlte-datatable>
+                    </thead>
+                    <tbody>
+                        @foreach($authors as $author)
+                            <tr>
+                                <td>{{ $author->id }}</td>
+                                <td>{{ $author->name }}</td>
+                                <td>{{ $author->description }}</td>
+                                <td>{{ $author->popularity }}</td>
+                                <td>{{ $author->quotes_count }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                        {{ $authors->links() }}
+                    </tfoot>
+                </table>
 
             </div>
         </div>
