@@ -19,6 +19,11 @@
         @yield('title_postfix', config('adminlte.title_postfix', ''))
     </title>
 
+    {{-- package: laravel-livewire-tables--}}
+    <style type="text/css">
+        [x-cloak] { display: none !important; }
+    </style>
+
     {{-- Custom stylesheets (pre AdminLTE) --}}
     @yield('adminlte_css_pre')
 

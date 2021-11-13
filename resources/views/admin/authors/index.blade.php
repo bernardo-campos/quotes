@@ -13,35 +13,9 @@
 
     <div class="card">
         <div class="card-body">
-            <div class="row">
 
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>description</th>
-                            <th>popularity</th>
-                            <th>quotes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($authors as $author)
-                            <tr>
-                                <td>{{ $author->id }}</td>
-                                <td>{{ $author->name }}</td>
-                                <td>{{ $author->description }}</td>
-                                <td>{{ $author->popularity }}</td>
-                                <td>{{ $author->quotes_count }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        {{ $authors->links() }}
-                    </tfoot>
-                </table>
+            <livewire:author-table />
 
-            </div>
         </div>
     </div>
 
