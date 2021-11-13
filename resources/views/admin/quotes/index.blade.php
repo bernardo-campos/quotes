@@ -13,32 +13,9 @@
 
     <div class="card">
         <div class="card-body">
-            <div class="row">
 
+            <livewire:quote-table />
 
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>quote</th>
-                            <th>author</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($quotes as $quote)
-                            <tr>
-                                <td>{{ $quote->id }}</td>
-                                <td>{{ $quote->quote }}</td>
-                                <td>{{ $quote->author->name }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        {{ $quotes->links() }}
-                    </tfoot>
-                </table>
-
-            </div>
         </div>
     </div>
 
