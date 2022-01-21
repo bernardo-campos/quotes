@@ -24,6 +24,7 @@ class CreateQuotesTable extends Migration
             $table->unsignedBigInteger('likes')->default(0);
             $table->timestamps();
 
+            $table->fulltext('quote');
             $table->index('length');
             $table->index('words');
             $table->index('views');

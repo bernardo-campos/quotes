@@ -21,7 +21,11 @@ class QuoteTable extends DataTableComponent
                 ->searchable(),
             Column::make(__('Quote'), 'quote')
                 ->sortable()
-                ->searchable(),
+                ->searchable(
+                    function (Builder $query, $searchTerm) {
+                        $query->orWhereRaw("MATCH (quote) AGAINST (?)", [$searchTerm]);
+                    }
+                ),
         ];
     }
 
