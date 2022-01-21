@@ -18,6 +18,7 @@ class CreateAuthorsTable extends Migration
 
             $table->string('slug')->unique();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->char('letter', 1)->default('?');
             $table->string('description')->nullable();
             $table->unsignedInteger('popularity')->default(0);

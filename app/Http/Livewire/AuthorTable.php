@@ -15,6 +15,7 @@ class AuthorTable extends DataTableComponent
         return [
             Column::make('id')
                 ->sortable(),
+            Column::make(__('Image'), 'image'),
             Column::make(__('Name'), 'name')
                 ->sortable()
                 ->searchable(),
@@ -28,6 +29,11 @@ class AuthorTable extends DataTableComponent
     public function setTableClass(): ?string
     {
         return "table table-sm";
+    }
+
+    public function rowView(): string
+    {
+        return 'admin.authors.livewire.row';
     }
 
     public function query(): Builder
