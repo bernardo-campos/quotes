@@ -9,8 +9,6 @@ class QuoteController extends Controller
 {
     public function index()
     {
-        return view('admin.quotes.index', [
-            'quotes' => Quote::with('author')->paginate()
-        ]);
+        return view('admin.quotes.index');
     }
 }
