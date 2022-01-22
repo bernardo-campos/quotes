@@ -13,12 +13,41 @@ class Author extends Model
     protected $fillable = [
         'slug',
         'name',
-        'image',
-        'letter',
         'description',
+        'abstract',
+        'bio',
+        'image',
+        'dob', // date of birth
+        'yob', // year of birth (in case dob is null)
+        'pob', // place of birth
+        'dod', // date of death
+        'yod', // year of death (in case dod is null)
+        'pod', // place of death
+        'letter',
         'popularity',
     ];
 
+    protected $casts = [
+        'dob' => 'date',
+        'dod' => 'date',
+    ];
+
+    public function getAgeAttribute()
+    {
+        if ($this->attributes['dob']) {
+            if ($this->attributes['dod']) {
+                return $this->dod->diffInYears($this->dob);
+            }
+            return \Carbon\Carbon::now()->diffInYears($this->dob);
+        }
+        if ($this->attributes['yob']) {
+            if ($this->attributes['yod']) {
+                return $this->attributes['yod'] - $this->attributes['yob'];
+            }
+            return date('Y') - $this->attributes['yob'];
+        }
+        return null;
+    }
 
     /* Relationships */
 

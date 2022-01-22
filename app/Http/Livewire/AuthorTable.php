@@ -15,10 +15,11 @@ class AuthorTable extends DataTableComponent
         return [
             Column::make('id')
                 ->sortable(),
-            Column::make(__('Image'), 'image'),
+            Column::make(__('Info')),
             Column::make(__('Name'), 'name')
                 ->sortable()
                 ->searchable(),
+            Column::make(__('Age')),
             Column::make(__('Description'), 'description')
                 ->searchable(),
             Column::make(__('Popularity'), 'popularity')

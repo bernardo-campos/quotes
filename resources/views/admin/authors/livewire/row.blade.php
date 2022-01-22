@@ -10,12 +10,30 @@
             icon="far fa-image"
             data-image="/storage/{{ $row->image }}"
             data-name="{{ $row->name }}"
+            data-bio="{{ $row->bio }}"
+            data-figcaption="{{ $row->description }}"
+            data-abstract="{{ $row->abstract }}"
+            label="Info"
             class="btn-sm py-0 px-1"/>
+    @else
+        <x-adminlte-button
+                data-toggle="modal"
+                data-target="#modalImg"
+                data-name="{{ $row->name }}"
+                data-bio="{{ $row->bio }}"
+                data-figcaption="{{ $row->description }}"
+                data-abstract="{{ $row->abstract }}"
+                label="Info"
+                class="btn-sm py-0 px-1"/>
     @endif
 </x-livewire-tables::table.cell>
 
 <x-livewire-tables::table.cell>
     {{ $row->name }}
+</x-livewire-tables::table.cell>
+
+<x-livewire-tables::table.cell>
+    {{ $row->age }}
 </x-livewire-tables::table.cell>
 
 <x-livewire-tables::table.cell>
