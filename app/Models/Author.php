@@ -49,6 +49,16 @@ class Author extends Model
         return null;
     }
 
+    public function hasImage()
+    {
+        return (bool)$this->attributes['image'];
+    }
+
+    public function getImageAttribute()
+    {
+        return url( $this->hasImage() ? 'storage/' . $this->attributes['image'] : 'img/no-photo.jpg');
+    }
+
     /* Relationships */
 
     public function quotes()
