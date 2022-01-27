@@ -59,6 +59,19 @@ class Author extends Model
         return url( $this->hasImage() ? 'storage/' . $this->attributes['image'] : 'img/no-photo.jpg');
     }
 
+    public function yearsOfLife()
+    {
+        $text = $this->dob ? $this->dob->year : ($this->attributes['yob'] ?? '?');
+        $text .= ' - ';
+        $text .= $this->dod ? $this->dod->year : ($this->attributes['yod'] ?? 'presente');
+        return $text;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     /* Relationships */
 
     public function quotes()

@@ -20,6 +20,7 @@ Route::group([
     'as' => 'guest.',
 ], function () {
     Route::get('/authors', [GuestAuthor::class, 'index'])->name('authors.index');
+    Route::get('/authors/{author}', [GuestAuthor::class, 'show'])->name('authors.show');
     Route::get('/quotes', [GuestQuote::class, 'index'])->name('quotes.index');
 });
 
