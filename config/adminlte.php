@@ -226,7 +226,7 @@ return [
 
     'menu' => [
 
-        ['header' => 'models'],
+        // ['header' => 'models'],
         [
             'text'      => 'authors',
             'route'     => 'admin.authors.index',
@@ -235,6 +235,18 @@ return [
         [
             'text'      => 'quotes',
             'route'     => 'admin.quotes.index',
+            'icon'      => 'far fa-fw fa-comments',
+        ],
+        [
+            'text'      => 'authors',
+            // 'route'     => 'guest.authors.index',
+            'url'        => '#',
+            'icon'      => 'fas fa-fw fa-users',
+        ],
+        [
+            'text'      => 'quotes',
+            // 'route'     => 'guest.quotes.index',
+            'url'        => '#',
             'icon'      => 'far fa-fw fa-comments',
         ],
 
@@ -260,6 +272,7 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+        App\Filters\AdminRoutesFilter::class,
     ],
 
     /*

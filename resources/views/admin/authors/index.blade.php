@@ -14,7 +14,7 @@
     <div class="card">
         <div class="card-body">
 
-            <livewire:author-table />
+            <livewire:admin.author-table />
 
         </div>
     </div>

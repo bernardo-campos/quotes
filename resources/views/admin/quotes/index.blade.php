@@ -14,7 +14,7 @@
     <div class="card">
         <div class="card-body">
 
-            <livewire:quote-table />
+            <livewire:admin.quote-table />
 
         </div>
     </div>
