@@ -239,8 +239,7 @@ return [
         ],
         [
             'text'      => 'authors',
-            // 'route'     => 'guest.authors.index',
-            'url'        => '#',
+            'route'     => 'guest.authors.index',
             'icon'      => 'fas fa-fw fa-users',
         ],
         [

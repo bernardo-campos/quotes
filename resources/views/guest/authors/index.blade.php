@@ -2,16 +2,14 @@
 
 @section('layout_topnav', true)
 
-@section('title', config('app.name'))
+@section('title', 'Listado de Autores')
 
 @section('content')
 
     <div class="card">
         <div class="card-body">
 
-            <div class="text-center">
-                <h1>¡Bienvenido!</h1>
-            </div>
+            <livewire:guest.author-table />
 
         </div>
     </div>
@@ -22,4 +20,5 @@
 @endpush
 
 @push('css')
+<link rel="stylesheet" href="{{ asset('css/myStyles.css') }}">
 @endpush

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    public function index()
+    {
+        return view('guest.authors.index');
+    }
+
     public function show(Author $author)
     {
         $author->load('quotes')->loadCount('quotes');
