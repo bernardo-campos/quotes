@@ -3,9 +3,9 @@
 		<a href="{{ route('guest.authors.show', $row) }}" class="text-dark">
 			<x-adminlte-profile-widget
 				class="h-100"
-				name="{{ $row->name }}"
+				name="{!! $row->name !!}"
 				img="{{ $row->image }}"
-				desc="{{ $row->description }}"
+				desc="{!! $row->description !!}"
 				layout-type="classic"/>
 		</a>
 	</div>
