@@ -244,8 +244,7 @@ return [
         ],
         [
             'text'      => 'quotes',
-            // 'route'     => 'guest.quotes.index',
-            'url'        => '#',
+            'route'     => 'guest.quotes.index',
             'icon'      => 'far fa-fw fa-comments',
         ],
 
