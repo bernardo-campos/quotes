@@ -32,6 +32,28 @@ class Author extends Model
         'dod' => 'date',
     ];
 
+    public function getYobAttribute()
+    {
+        if ($this->attributes['yob']) {
+            return $this->attributes['yob'];
+        }
+        if ($this->attributes['dob']) {
+            return $this->dob->year;
+        }
+        return null;
+    }
+
+    public function getYodAttribute()
+    {
+        if ($this->attributes['yod']) {
+            return $this->attributes['yod'];
+        }
+        if ($this->attributes['dod']) {
+            return $this->dod->year;
+        }
+        return null;
+    }
+
     public function getAgeAttribute()
     {
         if ($this->attributes['dob']) {

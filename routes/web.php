@@ -5,12 +5,9 @@ use App\Http\Controllers\Admin\QuoteController as AdminQuote;
 
 use App\Http\Controllers\Guest\AuthorController as GuestAuthor;
 use App\Http\Controllers\Guest\QuoteController as GuestQuote;
+use App\Http\Controllers\Guest\HomeController as GuestHome;
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('guest.welcome');
-});
 
 Route::get('/home', function() {
     return redirect()->route('admin.home');
@@ -19,6 +16,7 @@ Route::get('/home', function() {
 Route::group([
     'as' => 'guest.',
 ], function () {
+    Route::get('/', [GuestHome::class, 'home'])->name('home');
     Route::get('/authors', [GuestAuthor::class, 'index'])->name('authors.index');
     Route::get('/authors/{author}', [GuestAuthor::class, 'show'])->name('authors.show');
     Route::get('/quotes', [GuestQuote::class, 'index'])->name('quotes.index');
