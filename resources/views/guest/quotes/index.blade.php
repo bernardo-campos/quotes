@@ -20,4 +20,10 @@
 @endpush
 
 @push('css')
+<style type="text/css">
+    mark {
+        padding: 0!important;
+        background-color: yellow!important;
+    }
+</style>
 @endpush
