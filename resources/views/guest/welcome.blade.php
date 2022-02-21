@@ -11,7 +11,7 @@
             <h4>Efemérides</h4>
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-12 col-md-6">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Cumpleaños</div>
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-sm-12 col-md-6">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Fallecimientos</div>
