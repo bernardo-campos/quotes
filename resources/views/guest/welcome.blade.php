@@ -8,13 +8,13 @@
 
     <div class="row pt-4">
         <div class="col-12">
-            <h4>Efemérides</h4>
+            <h4>Efemérides 📅 {{ today()->isoFormat('D [de] MMMM') }}</h4>
         </div>
 
         <div class="col-sm-12 col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Cumpleaños</div>
+                    <div class="card-title">Nacimientos</div>
                 </div>
                 <div class="card-body p-0">
                     @forelse ($birthdays as $author)
