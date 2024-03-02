@@ -36,6 +36,7 @@ class CreateAuthorsTable extends Migration
             $table->fulltext('bio');
             $table->index('popularity');
             $table->index('letter');
+            $table->softDeletes();
         });
     }
 

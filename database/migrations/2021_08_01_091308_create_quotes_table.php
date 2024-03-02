@@ -29,6 +29,7 @@ class CreateQuotesTable extends Migration
             $table->index('words');
             $table->index('views');
             $table->index('likes');
+            $table->softDeletes();
         });
     }
 
