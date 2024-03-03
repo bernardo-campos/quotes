@@ -29,6 +29,11 @@ class QuoteTable extends DataTableComponent
         return $str;
     }
 
+    public function configure(): void
+    {
+        $this->setPrimaryKey('id');
+    }
+
     public function columns(): array
     {
         return [
@@ -60,7 +65,7 @@ class QuoteTable extends DataTableComponent
                     }
                     return $value;
                 })
-                ->asHtml(),
+                ->html(),
         ];
     }
 
@@ -69,7 +74,7 @@ class QuoteTable extends DataTableComponent
         return "table table-sm";
     }
 
-    public function query(): Builder
+    public function builder(): Builder
     {
         return Quote::with('author');
     }
