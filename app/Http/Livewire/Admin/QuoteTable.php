@@ -9,6 +9,14 @@ use App\Models\Quote;
 
 class QuoteTable extends DataTableComponent
 {
+    public function configure(): void
+    {
+        $this->setPrimaryKey('id');
+        $this->setTableAttributes([
+            'default' => false,
+            'class' => 'table table-sm table-hover',
+        ]);
+    }
 
     public function columns(): array
     {
@@ -36,12 +44,7 @@ class QuoteTable extends DataTableComponent
         ];
     }
 
-    public function setTableClass(): ?string
-    {
-        return "table table-sm";
-    }
-
-    public function query(): Builder
+    public function builder(): Builder
     {
         return Quote::with('author');
     }

@@ -9,35 +9,36 @@ use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class AuthorTable extends DataTableComponent
 {
+    protected $model = Author::class;
+
+    public function configure(): void
+    {
+        $this->setPrimaryKey('id');
+        $this->setTableAttributes([
+            'default' => false,
+            'class' => 'table table-sm table-hover',
+        ]);
+    }
+
     public function columns(): array
     {
         return [
             Column::make('id')
                 ->sortable(),
-            Column::make(__('Info')),
+            // Column::make(__('Info')),
             Column::make(__('Name'), 'name')
                 ->sortable()
                 ->searchable(),
-            Column::make(__('Age')),
+            // Column::make(__('Age')), // cam't display calculated attribute
             Column::make(__('Description'), 'description')
                 ->searchable(),
             Column::make(__('Popularity'), 'popularity')
                 ->sortable(),
+            Column::make(__('Button'), 'image')
+                ->view('admin.authors.livewire.button'),
+            Column::make('bio')->hideIf(true),
+            Column::make('description')->hideIf(true),
+            Column::make('abstract')->hideIf(true),
         ];
-    }
-
-    public function setTableClass(): ?string
-    {
-        return "table table-sm";
-    }
-
-    public function rowView(): string
-    {
-        return 'admin.authors.livewire.row';
-    }
-
-    public function query(): Builder
-    {
-        return Author::query();
     }
 }
