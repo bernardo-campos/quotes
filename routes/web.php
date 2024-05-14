@@ -9,6 +9,10 @@ use App\Http\Controllers\Guest\HomeController as GuestHome;
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('healthcheck', function () {
+    return response()->json(['message' => 'OK']);
+});
+
 Route::get('/home', function() {
     return redirect()->route('admin.home');
 })->name('home');
