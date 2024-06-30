@@ -11,49 +11,15 @@
             <h4>Efemérides 📅 {{ today()->isoFormat('D [de] MMMM') }}</h4>
         </div>
 
-        <div class="col-sm-12 col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Nacimientos</div>
-                </div>
-                <div class="card-body p-0">
-                    @forelse ($birthdays as $author)
-                        <a href="{{ route('guest.authors.show', $author) }}" class="text-dark">
-                            <x-adminlte-profile-widget
-                                class="mb-0"
-                                name="{!! $author->name !!}"
-                                img="{{ $author->image }}"
-                                desc="{!! $author->yob !!} - {!! $author->description !!}"
-                                layout-type="classic"/>
-                        </a>
-                    @empty
-                        No hay datos
-                    @endforelse
-                </div>
-            </div>
-        </div>
+        <livewire:guest.author-list
+            type="births"
+            title="Nacimientos"
+        />
 
-        <div class="col-sm-12 col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Fallecimientos</div>
-                </div>
-                <div class="card-body p-0">
-                    @forelse ($deaths as $author)
-                        <a href="{{ route('guest.authors.show', $author) }}" class="text-dark">
-                            <x-adminlte-profile-widget
-                                class="mb-0"
-                                name="{!! $author->name !!}"
-                                img="{{ $author->image }}"
-                                desc="{!! $author->yod !!} - {!! $author->description !!}"
-                                layout-type="classic"/>
-                        </a>
-                    @empty
-                        No hay datos
-                    @endforelse
-                </div>
-            </div>
-        </div>
+        <livewire:guest.author-list
+            type="deaths"
+            title="Fallecimientos"
+        />
 
     </div>
 
