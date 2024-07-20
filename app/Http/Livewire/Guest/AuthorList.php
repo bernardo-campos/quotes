@@ -26,7 +26,7 @@ class AuthorList extends Component
 
     public function render()
     {
-        $this->authors = Author::where($this->column, 'like', "%-" . date('m-d'))->get();
+        $this->authors = Author::where($this->column, 'like', "%-" . date('m-d'))->orderByDesc($this->column)->get();
 
         return view('livewire.guest.author-list', [
             'authors' => $this->authors
