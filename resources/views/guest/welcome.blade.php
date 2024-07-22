@@ -7,9 +7,7 @@
 @section('content')
 
     <div class="row pt-4">
-        <div class="col-12">
-            <h4>Efemérides 📅 {{ today()->isoFormat('D [de] MMMM') }}</h4>
-        </div>
+        <livewire:guest.date-input/>
 
         <livewire:guest.author-list
             type="births"

@@ -17,5 +17,8 @@
                 No hay datos
             @endforelse
         </div>
+        <div class="overlay d-none" wire:loading.class.remove="d-none">
+            <i class="fas fa-spinner fa-5x fa-spin"></i>
+        </div>
     </div>
 </div>
